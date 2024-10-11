@@ -392,14 +392,14 @@ function plot_error(err ,method)
 		for i in 1:eps - 1
 			plot!(err[(i*grid+1):(i+1)*grid,1], label = "ε = $(round(10.0^(-i-1),digits=4))")
 		end
-		xticks!(1:5,["$(2/2)","$(2/20)","$(round(2/200,digits=4))"])
+		xticks!(1:3,["$(2/2)","$(2/20)","$(round(2/200,digits=4))"])
 		return fig_ritz
 	else
 		fig_nitsche = plot(err[1:grid,2], yaxis=:log, label = "ε = 1", ylabel = "L^2-error", title = "Nitsche formulation", xlabel = "grid size")
 		for i in 1:eps - 1
 			plot!(err[(i*grid+1):(i+1)*grid,2], label = "ε = $(round(10.0^(-i),digits = 4))")
 		end
-		xticks!(1:5,["$(2/2)","$(2/20)","$(round(2/200,digits=4))"])
+		xticks!(1:3,["$(2/2)","$(2/20)","$(round(2/200,digits=4))"])
 		return fig_nitsche
 	end
 
